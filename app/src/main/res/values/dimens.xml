@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <!-- font sizes -->
+    <dimen name="font_larger">22sp</dimen>
+    <dimen name="font_large">18sp</dimen>
+    <dimen name="font_normal_plus">17sp</dimen>
+    <dimen name="font_normal">16sp</dimen>
+    <dimen name="font_normal_minus">15sp</dimen>
+    <dimen name="font_small">14sp</dimen>
+    <dimen name="font_small_minus">12sp</dimen>
+    <dimen name="font_tiny_plus">11sp</dimen>
+    <dimen name="font_tiny">10sp</dimen>
+
+    <!-- typical spacing between two views -->
+    <dimen name="spacing_extrahuge">32dp</dimen>
+    <dimen name="spacing_huge">24dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_normal_plus">12dp</dimen>
+    <dimen name="spacing_normal">8dp</dimen>
+    <dimen name="spacing_small">6dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+
+    <!-- typical sizes of views -->
+    <dimen name="button_height_tall">60dp</dimen>
+    <dimen name="button_height_normal">40dp</dimen>
+    <dimen name="button_height_short">32dp</dimen>
+
+    <dimen name="profile_list_item_height">60dip</dimen>
+    <dimen name="profile_list_item_height_small">50dip</dimen>
+
+
+    <!--BOTTOM NAVIGATION VIEW OVERRIDE-->
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">@dimen/font_tiny</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">
+        @dimen/font_tiny_plus
+    </dimen>
+
+</resources>
