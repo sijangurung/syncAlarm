@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:animateLayoutChanges="true"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:id="@+id/txtProfileDevice"
+        style="@style/value_TextView.L"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/lightgray"
+        android:text="device"
+        />
+
+    <ImageView
+        android:layout_marginTop="@dimen/spacing_huge"
+        android:layout_marginBottom="@dimen/spacing_huge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/img_mobile"
+        />
+
+    <TextView
+        android:id="@+id/lblProfileColor"
+        android:layout_marginTop="@dimen/spacing_normal"
+        style="@style/value_TextView.XS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/lightgray"
+        android:text="your color"
+        android:layout_gravity="center"
+        />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/border_frame"
+        android:layout_marginBottom="@dimen/spacing_normal"
+        >
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/lightgray"
+            android:padding="1dip"
+            />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/lblProfileID"
+        style="@style/value_TextView.XS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="your id"
+        android:textColor="@color/lightgray"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:layout_marginTop="-5dp"
+        android:id="@+id/txtProfileID"
+        style="@style/AppTheme.TextAppearance.Digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacing_huge"
+        android:text="000000"
+        android:textColor="@color/lightgray"
+        android:textSize="@dimen/font_hulk"
+        />
+
+    <Button
+        android:id="@+id/btnRegisterDevice"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_large"
+        android:background="@color/colorAccent"
+        android:text="Register this device"
+        android:textColor="@color/white"
+        />
+
+
+</LinearLayout>

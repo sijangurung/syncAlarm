@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "596974384020",
+    "firebase_url": "https://syncalarm-5881f.firebaseio.com",
+    "project_id": "syncalarm-5881f",
+    "storage_bucket": "syncalarm-5881f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596974384020:android:8a17012f6adc0ad4",
+        "android_client_info": {
+          "package_name": "com.gurungsijan.syncalarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596974384020-tiintt6l18ssi5icbqf9uhdd2q9t6l9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD44YqXFXNb7MAulDAndz3T9qeA5ezTqYc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

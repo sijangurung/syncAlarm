@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+
 
 android {
     compileSdkVersion 25
@@ -20,8 +23,19 @@ android {
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+        main {
+            res.srcDirs = [
+                    'src/main/res-main',
+                    'src/main/res-screen/alarms',
+                    'src/main/res-screen/devices',
+                    'src/main/res-screen/profile'
+            ]
+        }
     }
 }
+
+def support_library_version = '25.1.0'
+def retrofit_version = '2.0.2'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -29,7 +43,18 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.0.0'
+    compile "com.android.support:design:${support_library_version}"
+    compile "com.android.support:recyclerview-v7:${support_library_version}"
+    compile "com.android.support:cardview-v7:${support_library_version}"
+
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+
+    compile 'com.firebaseui:firebase-ui-database:1.0.0'
+    compile 'com.google.firebase:firebase-auth:10.0.1'
+    compile 'com.google.firebase:firebase-database:10.0.1'
+
+    compile 'com.facebook.stetho:stetho:1.4.2'
+    compile "com.squareup.retrofit2:converter-gson:${retrofit_version}"
 
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

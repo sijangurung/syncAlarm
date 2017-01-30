@@ -1,24 +1,59 @@
 package com.gurungsijan.syncalarm
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.*
 import android.widget.TextView
+import com.gurungsijan.syncalarm.common.BaseActivity
+import com.gurungsijan.syncalarm.devices.alarmFragment
+import com.gurungsijan.syncalarm.devices.deviceFragment
+import com.gurungsijan.syncalarm.profile.profileFragment
+import kotlinx.android.synthetic.main.activity_main.*
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : BaseActivity() {
+
+    companion object {
+        var currentFragment: Fragment? = null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorAccent))
-        setSupportActionBar(toolbar)
+        //default fragment....
+        currentFragment = alarmFragment.newInstance()
+        switchFragment(currentFragment, "firstOne")
 
+        //bottomnavigation
+        bottom_navigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.action_alarms -> {
+                    currentFragment = alarmFragment.newInstance()
+                }
+                R.id.action_devices -> {
+                    currentFragment = deviceFragment.newInstance()
+                }
+                R.id.action_profile -> {
+                    currentFragment = profileFragment.newInstance()
+                }
+            }
+            switchFragment(currentFragment, "newOne")
+            true
+        }
+
+    }
+
+    protected fun switchFragment(fragment: Fragment?, fragmentTag: String) {
+        val transaction = supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, fragment, fragmentTag)
+
+        transaction.commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -100,5 +135,9 @@ class MainActivity : AppCompatActivity() {
             }
             return null
         }
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 }
