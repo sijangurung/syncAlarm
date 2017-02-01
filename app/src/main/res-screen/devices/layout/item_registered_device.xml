@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/spacing_normal"
+              android:background="@drawable/primary_bottom_frame"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:padding="@dimen/spacing_normal"
+    >
+
+    <ImageView
+        android:id="@+id/imgRegisteredDevice"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/spacing_small"
+        android:layout_marginRight="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_normal"
+        app:srcCompat="@drawable/img_mobile"/>
+
+    <TextView
+        android:id="@+id/txtRegisteredID"
+        style="@style/AppTheme.TextAppearance.Digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/font_larger"
+        android:paddingTop="@dimen/spacing_normal"
+        tools:text="000000"/>
+
+
+    <TextView
+        android:id="@+id/txtRegisteredDevice"
+        style="@style/value_TextView.XS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        tools:text="iPhone6s"/>
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.gurungsijan.syncalarm.common.extensions
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.view.View
@@ -32,12 +33,12 @@ fun View.hide() {
     this.visibility = View.GONE
 }
 
-fun View.toast(message: String){
-    Toast.makeText(ctx,message,Toast.LENGTH_SHORT).show()
+fun Activity.toast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
-fun randomBGColor(): Int{
-    val colorList = listOf<String>("#1976D2","#2196F3","#BBDEFB","#03A9F4","#212121","#BDBDBD")
-    val randomNumber = Random().nextInt(colorList.size)+0
-    return Color.parseColor( colorList.get(randomNumber) )
+fun randomBGColor(): Int {
+    val colorList = listOf<String>("#1976D2", "#2196F3", "#BBDEFB", "#03A9F4", "#212121", "#BDBDBD")
+    val randomNumber = Random().nextInt(colorList.size) + 0
+    return Color.parseColor(colorList.get(randomNumber))
 }

@@ -3,6 +3,7 @@ package com.gurungsijan.syncalarm.app
 import android.app.Application
 import android.content.Context
 import com.facebook.stetho.Stetho
+import com.google.firebase.database.FirebaseDatabase
 import com.gurungsijan.syncalarm.R
 import com.gurungsijan.syncalarm.preferences.PreferencesMgr
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
@@ -21,6 +22,9 @@ open class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true)
+
         initFonts()
         initialisePreference()
 

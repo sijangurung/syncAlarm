@@ -56,7 +56,7 @@ class alarmFragment : BaseFragment  () {
         rvAllAlarms.layoutManager = layoutManager
 
         allAlarmsAdapter = AlarmListAdapter(alarmsList,{
-            view.toast("Cliked the alarm $it")
+            activity.toast("Cliked the alarm $it")
         })
 
         rvAllAlarms.adapter = allAlarmsAdapter

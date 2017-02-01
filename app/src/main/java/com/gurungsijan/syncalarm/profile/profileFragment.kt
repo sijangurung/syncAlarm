@@ -95,6 +95,7 @@ class profileFragment : BaseFragment() {
 
                         writeDeviceDetails(strHexColor)
                         preference.changeRegisteredStatus(true)
+                        preference.deviceID = strHexColor
                     }
                 }
 

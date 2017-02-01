@@ -22,6 +22,7 @@ class PreferencesMgr private constructor() {
         const val REGISTERED_STATUS = "registered_status"
 
         const val PROFILE_DATA = "PROFILE_DATA"
+        const val DEVICE_ID = "DEVICE_ID"
 
 
         const val BASE_URL = "base_url"
@@ -46,6 +47,14 @@ class PreferencesMgr private constructor() {
 
     fun getRegisteredStatus() = prefs?.getString(REGISTERED_STATUS, "no")
 
+    var deviceID: String
+        get() {
+            return prefs?.getString(DEVICE_ID, "") ?: ""
+        }
+        set(value) {
+            storeStringToPreferences(DEVICE_ID, value)
+        }
+
     var profileData: String
         get() {
             return prefs?.getString(PROFILE_DATA, "") ?: ""
@@ -53,7 +62,6 @@ class PreferencesMgr private constructor() {
         set(value) {
             storeStringToPreferences(PROFILE_DATA, value)
         }
-
     /*GENERAL METHODS...*/
     /**
      * Storing String to Preference

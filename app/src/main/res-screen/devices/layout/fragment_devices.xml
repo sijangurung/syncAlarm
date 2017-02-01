@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <TextView
+        style="@style/label_TextView.S"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="registered devices"
+
+        android:layout_height="35dp"
+        android:background="@color/lightgray"
+        android:gravity="bottom"
+        android:paddingBottom="@dimen/spacing_small"
+        android:paddingLeft="@dimen/font_normal"
+        android:paddingStart="@dimen/font_normal"
+        android:text="Registered Devices"
+        android:textColor="@color/charcoal_gray"
         />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvRegisteredDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <TextView
+        style="@style/label_TextView.S"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="requests"
+        android:layout_height="35dp"
+        android:background="@color/lightgray"
+
+        android:gravity="bottom"
+        android:paddingBottom="@dimen/spacing_small"
+        android:paddingLeft="@dimen/font_normal"
+        android:paddingStart="@dimen/font_normal"
+        android:text="Requests"
+        android:textColor="@color/charcoal_gray"
         />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvDeviceRequests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_device_request"
+        />
 
 </LinearLayout>

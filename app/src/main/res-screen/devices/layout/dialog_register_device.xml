@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:padding="@dimen/spacing_large">
+
+    <EditText
+        android:id="@+id/edt_deviceID"
+        style="@style/AppTheme.TextAppearance.Digit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="000000"
+        android:inputType="none"
+        android:maxLength="6"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/font_huge"
+        tools:text="Device ID"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/lblStatusDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_normal"
+        android:text="No Device Found"
+        />
+
+    <TextView
+        android:id="@+id/txtSearchID"
+        style="@style/AppTheme.TextAppearance.Digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/spacing_normal"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/font_larger"
+        android:visibility="gone"
+        tools:text="000000"/>
+
+
+    <TextView
+        android:id="@+id/txtSearchDevice"
+        style="@style/value_TextView.XS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:visibility="gone"
+        tools:text="iPhone6s"/>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="Confirm"/>
+</LinearLayout>
