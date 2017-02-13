@@ -9,4 +9,5 @@
 
     <string name="str_ok">OK</string>
     <string name="str_cancel">Cancel</string>
+    <string name="title_activity_loading">LoadingActivity</string>
 </resources>

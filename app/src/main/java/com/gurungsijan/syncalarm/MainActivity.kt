@@ -7,8 +7,8 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.view.*
 import android.widget.TextView
+import com.gurungsijan.syncalarm.alarms.alarmFragment
 import com.gurungsijan.syncalarm.common.BaseActivity
-import com.gurungsijan.syncalarm.devices.alarmFragment
 import com.gurungsijan.syncalarm.devices.deviceFragment
 import com.gurungsijan.syncalarm.profile.profileFragment
 import kotlinx.android.synthetic.main.activity_main.*

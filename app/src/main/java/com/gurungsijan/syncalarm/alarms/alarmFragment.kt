@@ -1,4 +1,4 @@
-package com.gurungsijan.syncalarm.devices
+package com.gurungsijan.syncalarm.alarms
 
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -19,7 +19,7 @@ import com.gurungsijan.syncalarm.common.extensions.toast
  * sijan.gurung@shortcut.no
  *
  */
-class alarmFragment : BaseFragment  () {
+class alarmFragment : BaseFragment() {
 
     //layout
     override val mContentLayoutResourceId: Int = R.layout.fragment_alarms
@@ -29,10 +29,10 @@ class alarmFragment : BaseFragment  () {
     var allAlarmsAdapter : AlarmListAdapter? = null
     //data
     val alarmsList = listOf<AlarmItem>(AlarmItem("9:35", randomBGColor())
-            ,AlarmItem("7:30", randomBGColor())
-            ,AlarmItem("11:30", randomBGColor())
-            ,AlarmItem("3:10", randomBGColor())
-            ,AlarmItem("10:45", randomBGColor()) )
+            , AlarmItem("7:30", randomBGColor())
+            , AlarmItem("11:30", randomBGColor())
+            , AlarmItem("3:10", randomBGColor())
+            , AlarmItem("10:45", randomBGColor()) )
 
     var firebaseDbRef : DatabaseReference? = null
 
@@ -61,4 +61,7 @@ class alarmFragment : BaseFragment  () {
 
         rvAllAlarms.adapter = allAlarmsAdapter
     }
+
+
+
 }

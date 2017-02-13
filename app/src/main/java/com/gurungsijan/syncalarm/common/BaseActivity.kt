@@ -1,8 +1,10 @@
 package com.gurungsijan.syncalarm.common
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.gurungsijan.syncalarm.alarms.receiver.AlarmBroadcastReciever
 
 
 /**
@@ -33,5 +35,11 @@ open class BaseActivity : AppCompatActivity() {
     val uid: String
         get() = FirebaseAuth.getInstance().getCurrentUser()!!.getUid()
 
+
+
+    fun alarmScheduleService(){
+        val mathAlarmServiceIntent = Intent(this, AlarmBroadcastReciever::class.java)
+        sendBroadcast(mathAlarmServiceIntent, null)
+    }
 
 }

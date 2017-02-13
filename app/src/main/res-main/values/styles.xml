@@ -87,9 +87,11 @@
     <style name="value_TextView.S" parent="value_TextView">
         <item name="android:textSize">@dimen/font_small</item>
     </style>
+
     <style name="value_TextView.L" parent="value_TextView">
         <item name="android:textSize">@dimen/font_large</item>
     </style>
+
     <style name="value_TextView.XL" parent="value_TextView">
         <item name="android:textSize">@dimen/font_larger</item>
     </style>

@@ -7,7 +7,8 @@ import android.view.animation.AlphaAnimation
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.gson.Gson
 import com.gurungsijan.syncalarm.R
 import com.gurungsijan.syncalarm.common.BaseFragment
@@ -19,8 +20,6 @@ import com.gurungsijan.syncalarm.preferences.PreferencesMgr
 import com.gurungsijan.syncalarm.repository.Profile
 import com.gurungsijan.syncalarm.repository.Register
 import kotlinx.android.synthetic.main.fragment_profile.*
-import java.util.*
-
 
 
 /**
@@ -51,6 +50,14 @@ class profileFragment : BaseFragment() {
         super.setUp()
     }
 
+    fun randomHexCodeGenerator(): String {
+        val randomHex = Integer.parseInt( (Integer.toHexString((Math.random() * 0xFFFFFF).toInt())),16)+1
+        val sixDigit = String.format("%06X",0xFFFFFF and randomHex)
+        println("Generated sixDigit: $sixDigit")
+        return sixDigit
+    }
+
+
     override fun setUpUI(view: View) {
         super.setUpUI(view)
 
@@ -66,40 +73,49 @@ class profileFragment : BaseFragment() {
 
         //on button press..
         btnRegisterMe.setOnClickListener {
-            //registration part!!!!
-            firebaseDbRef = FirebaseDatabase.getInstance().getReference("register")
-            firebaseDbRef?.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onCancelled(p0: DatabaseError?) {
-                    println("No Data $p0")
-                }
-
-                override fun onDataChange(p0: DataSnapshot?) {
-                    println("Data: $p0")
-                    var strHexColor: String? = "000000"
-                    if (p0 != null) {
-                        if (p0.value == null) {
-                            //writing the first device!!
-                            println("Value is null")
-                            strHexColor = "000000"
-                            firebaseDbRef?.child(strHexColor)?.setValue("registered")
+            //Random hexcolor generator...
 
 
-                        } else {
-                            val currentValue = p0.value as HashMap<String, String>
-                            println("Current Value = ${currentValue.keys}")
-                            val lastKey = currentValue.keys.max()
-                            println("LastKey: $lastKey")
-                            val converted = Integer.parseInt(lastKey, 16) + 1
-                            strHexColor = String.format("%06X", 0xFFFFFF and converted)
-                        }
+            /* //registration part!!!!
+             firebaseDbRef = FirebaseDatabase.getInstance().getReference("register")
+             firebaseDbRef?.addListenerForSingleValueEvent(object : ValueEventListener {
+                 override fun onCancelled(p0: DatabaseError?) {
+                     println("No Data $p0")
+                 }
 
-                        writeDeviceDetails(strHexColor)
-                        preference.changeRegisteredStatus(true)
-                        preference.deviceID = strHexColor
-                    }
-                }
+                 override fun onDataChange(p0: DataSnapshot?) {
+                     println("Data: $p0")
+                     var strHexColor: String? = "000000"
+                     if (p0 != null) {
+                         if (p0.value == null) {
+                             //writing the first device!!
+                             println("Value is null")
+                             strHexColor = "000000"
+                             firebaseDbRef?.child(strHexColor)?.setValue("registered")
 
-            })
+
+                         } else {
+                             val currentValue = p0.value as HashMap<String, String>
+                             println("Current Value = ${currentValue.keys}")
+                             val lastKey = currentValue.keys.max()
+                             println("LastKey: $lastKey")
+                             val converted = Integer.parseInt(lastKey, 16) + 1
+                             strHexColor = String.format("%06X", 0xFFFFFF and converted)
+                         }
+
+                         writeDeviceDetails(strHexColor)
+                         preference.changeRegisteredStatus(true)
+                         preference.deviceID = strHexColor
+                     }
+                 }
+
+             })*/
+
+            val strHexColor = randomHexCodeGenerator()
+            writeDeviceDetails(strHexColor)
+            preference.changeRegisteredStatus(true)
+            preference.deviceID = strHexColor
+
         }
     }
 
